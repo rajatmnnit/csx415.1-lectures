@@ -1,0 +1,25 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.9.1
+RVersion: 3.4.1
+Repos: CRAN=https://cran.cnr.berkeley.edu/
+
+Package: magrittr
+Source: CRAN
+Version: 1.5
+Hash: bdc4d48c3135e8f3b399536ddf160df4
+
+Package: optigrab
+Source: CRAN
+Version: 0.7.3
+Hash: 247d5adf35c95be4255091696d162353
+Requires: magrittr, stringi
+
+Package: packrat
+Source: CRAN
+Version: 0.4.9-1
+Hash: e95f4c0ccf3ac830a0a480888c1c965f
+
+Package: stringi
+Source: CRAN
+Version: 1.1.5
+Hash: b6308e49357a0b475f433599e0d8b5eb

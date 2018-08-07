@@ -1,0 +1,9 @@
+{
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/app",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

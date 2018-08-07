@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(readr)\nlibrary(caret)\nlibrary(data.table)\nlibrary(dplyr)\nlibrary(devtools)\nlibrary(rpart)\n\ndat <- aac_shelter_outcomes <- read_csv(\"data/aac_shelter_outcomes.csv\")\nsetDT(dat)\n\n# Some EDA\ndat[by=.(outcome_type, outcome_subtype),, .N \n    ][ order(N)  ]\n\n# Fit Model \nform <- outcome_type ~ animal_type + age_upon_outcome +  month(monthyear)\n\nset.seed(3142)\nfit <- rpart(form, dat %>% sample_n(100))\n\nset.seed(3142)\nfit <- caret::train( outcome_type ~ animal_type + breed + color + \n                       age_upon_outcome + month(monthyear)\n                     , dat %>% sample_n(1000) \n                     , method = \"rpart\"\n                   )\n\n# Eval Model ..\n\n# Build Model Packages \npkg <- \"pkgs/aac\"\nif( ! dir.exists(pkg) ) devtools::create(pkg)\n\n# Edit Package Now\ndevtools::use_\n",
+    "created" : 1526515879339.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2772603438",
+    "id" : "455271F4",
+    "lastKnownWriteTime" : 1526514896,
+    "last_content_update" : 1526516214112,
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/src/01-fit.R",
+    "project_path" : "src/01-fit.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

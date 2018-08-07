@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#'/path/to/Rscript\n# Usage: \n#  ./aac-outcome.r --type Dog --age 4\n\n# library(aac)\nlibrary(optigrab)\n\ntype <- optigrab(\"type\")\nage <- optigrab(\"age\") %>% as.numeric()\n\n# score <- function(...) \"Adopted\"  \nscore(type, age)\n",
+    "created" : 1526520359596.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1056651554",
+    "id" : "A6FAE637",
+    "lastKnownWriteTime" : 1526529622,
+    "last_content_update" : 1526529622501,
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/app/aac-outcome.r",
+    "project_path" : "aac-outcome.r",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

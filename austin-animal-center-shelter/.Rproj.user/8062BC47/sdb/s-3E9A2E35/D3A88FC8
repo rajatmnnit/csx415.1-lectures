@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' /path/to/Rscript\n# Usage: \n#  aac-outcome --type\n\nlibrary(aac)\nlibrary(optigrab)\n\ntype <- optigrab(\"type\")\nage <- optigrab(\"age\")\n\nscore(type, age)\n",
+    "created" : 1526519401143.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2058727845",
+    "id" : "D3A88FC8",
+    "lastKnownWriteTime" : 1526519722,
+    "last_content_update" : 1526519722460,
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/app/aac-outcome.r",
+    "project_path" : "app/aac-outcome.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

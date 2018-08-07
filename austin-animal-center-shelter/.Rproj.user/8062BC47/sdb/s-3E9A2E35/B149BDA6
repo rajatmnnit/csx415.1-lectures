@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(caret)\nlibrary(data.table)\nlibrary(dplyr)\nlibrary(devtools)\nlibrary(readr)\nlibrary(rpart)\nlibrary(ggplot2)\n\ndat <- aac_shelter_outcomes <- read_csv(\"data/aac_shelter_outcomes.csv\")\nsetDT(dat)\n\n# Some EDA\ndat[by=.(outcome_type, outcome_subtype),, .N \n    ][ order(N)  ]\n\ndat[ , age_years := \n       (datetime - date_of_birth) %>% as.numeric %>% divide_by(24*365) \n  ]\n\ndat[ , animal_type := animal_type %>% as.factor() ]\n\n# Fit Model \nform <- \n  outcome_type ~ \n    animal_type + age_years\n\ndat$animal_type %>% table\ndat$age_years %>% ggplot2::qplot(.)\n\nset.seed(3142)\nfit <- rpart(form, dat %>% sample_n(20000), cp=1e-4)\nplotcp(fit)\nprintcp(fit)\n\nfit <- prune(fit, cp=5e-3)\n\n# set.seed(3142)\n# fit <- caret::train( outcome_type ~ animal_type + breed + color + \n#                        age_upon_outcome + month(monthyear)\n#                      , dat %>% sample_n(1000) \n#                      , method = \"rpart\"\n# )\n\n\n# set.seed(3142)\n# fit <- caret::train( outcome_type ~ animal_type + breed + color + \n#                        age_upon_outcome + month(monthyear)\n#                      , dat %>% sample_n(1000) \n#                    )\n\n\n# Eval Model ..\n\n# Build Model Packages \npkg <- \"pkgs/aac\"\nif( ! dir.exists(\"pkgs\") ) dir.create(\"pkgs\")\nif( ! dir.exists(pkg) ) devtools::create(path=pkg)\n\n# Edit pkgs/aac/DESCRIPTION \n\ndevtools::use_data(fit, pkg=pkg)\nrm(fit)\nload_all(pkg)\nfit\n\ndata_prototype <- dat[ 0, .(animal_type, age_years) ] %>% as.data.frame()\ndevtools::use_data( data_prototype, pkg = pkg, overwrite = TRUE )\n\n# Write score function ... pkg/aac/R/score.R\n\n# Create app\nif( ! dir.exists(\"app\") ) dir.create( \"app\")\n\n# copy pkgs to pkgs\n\n# Open Pr   \n\n\n\n",
+    "created" : 1526517115371.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1521522026",
+    "id" : "B149BDA6",
+    "lastKnownWriteTime" : 1526519398,
+    "last_content_update" : 1526519998366,
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/src/01-fit.R",
+    "project_path" : "src/01-fit.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

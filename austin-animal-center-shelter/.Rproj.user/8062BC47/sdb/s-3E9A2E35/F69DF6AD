@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: aac\nTitle: What the Package Does (one line, title case)\nVersion: 0.0.0.9000\nAuthors@R: \"Christopher Brown <chris.brown@decisionpatterns.com> [aut,cre]\"\nDescription: What the package does (one paragraph).\nDepends: R (>= 3.4.1)\nImports: \n    rpart,\n    jsonlite\nLicense: GPL-2 | file LICENSE\nEncoding: UTF-8\nLazyData: true\n",
+    "created" : 1526519348610.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "728271543",
+    "id" : "F69DF6AD",
+    "lastKnownWriteTime" : 1526519369,
+    "last_content_update" : 1526519369190,
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/pkgs/aac/DESCRIPTION",
+    "project_path" : "pkgs/aac/DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

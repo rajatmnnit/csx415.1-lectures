@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @examples \n#'   score(\"Dog\", 3)\n#' \n#' @import jsonlite\n#' @import rpart\n#' @export \n\nscore <- function(type,age) { \n  \n  input <- data.frame(animal_type=type, age_years=age)\n  rbind(data_prototype, input) %>%    # automagically convert factors\n    predict(fit, ., type=\"class\") %>% \n    jsonlite::toJSON( )\n  \n}\n\n",
+    "created" : 1526518184115.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1609039620",
+    "id" : "D63D53CC",
+    "lastKnownWriteTime" : 1526519337,
+    "last_content_update" : 1526519337923,
+    "path" : "~/dp/products/training/uc-extensions/csx415/austin-animal-center-shelter/pkgs/aac/R/score.R",
+    "project_path" : "pkgs/aac/R/score.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
